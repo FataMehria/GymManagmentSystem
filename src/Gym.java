@@ -17,10 +17,11 @@ public class Gym {
     public String getName() {
         return name;
     }
-    public void addBranch(GymBranch branch){
-        if (branch == null){
-            throw new IllegalArgumentException("Branch cn not be null.");
-        }
+    public void addBranch(String address){
+        //"this" refers to the current Gym object
+        //The new branch will therefore know which gym it belongs to.
+        GymBranch branch = new GymBranch(address,this);
+
         branches.add(branch);
     }
     public void showBranches(){
