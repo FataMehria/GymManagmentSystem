@@ -78,4 +78,16 @@ public class Person {
         }
         return phone;
     }
+    public void printInfo(){
+        System.out.println("Name: "+name);
+        System.out.println("Age: "+age);
+        System.out.println("Email: "+email);
+        System.out.println("Phone: "+phone);
+        System.out.println();
+        System.out.println("Gym branch: "+gymBranch.getGym());
+        System.out.println("Gym location: "+gymBranch.getAddress());
+    }
+    public String getRole(){
+        return "Person";
+    }
 }
