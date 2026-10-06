@@ -20,7 +20,8 @@ public Member(String name,
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Membership: "+membership);
+        //shows membership type based on class
+        System.out.println("Membership: "+membership.getClass().getSimpleName());
     }
 
     @Override
