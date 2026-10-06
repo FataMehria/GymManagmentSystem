@@ -11,7 +11,7 @@ public class Staff extends Person{
         super(name,age,email,phone,gymBranch);
 
         if(position ==null || position.isBlank()){
-            throw new IllegalArgumentException("Position can not be empty.")
+            throw new IllegalArgumentException("Position can not be empty.");
         }
         this.position=position;
     }
