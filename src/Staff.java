@@ -24,6 +24,7 @@ public class Staff extends Person{
     public void printInfo() {
         super.printInfo();
         System.out.println("Position: "+position);
+        System.out.println("===================");
     }
 
     @Override

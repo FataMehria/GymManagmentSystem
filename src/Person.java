@@ -83,8 +83,7 @@ public class Person {
         System.out.println("Age: "+age);
         System.out.println("Email: "+email);
         System.out.println("Phone: "+phone);
-        System.out.println();
-        System.out.println("Gym branch: "+gymBranch.getGym());
+        System.out.println("Gym branch: "+gymBranch.getGym().getName());
         System.out.println("Gym location: "+gymBranch.getAddress());
     }
     public String getRole(){

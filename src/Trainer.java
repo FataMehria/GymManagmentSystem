@@ -23,7 +23,8 @@ public class Trainer extends Person{
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Specialization: "+specialization);
+        System.out.println("Specialization: Trainer("+specialization+")");
+        System.out.println("===================");
     }
 
     @Override
