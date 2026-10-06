@@ -1,22 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Gym {
     private String name;
-    private String address;
+    private List<GymBranch> branches;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getAdress() {
-        return address;
-    }
-    public Gym(String name,String address){
+    public Gym(String name){
         if(name == null || name.isBlank()){
             throw new IllegalArgumentException("Gym name cannot be empty.");
         }
-        if( address==null || address.isBlank()){
-            throw new IllegalArgumentException("Gym address cannot be empty");
-        }
+
         this.name=name;
-        this.address=address;
+        //Initialize an empty list of gym branches
+        this.branches= new ArrayList<>();
+    }
+    public String getName() {
+        return name;
+    }
+    public void addBranch(GymBranch branch){
+        if (branch == null){
+            throw new IllegalArgumentException("Branch cn not be null.");
+        }
+        branches.add(branch);
+    }
+    public void showBranches(){
+        for(GymBranch branch:branches){
+            System.out.println(branch.getAddress());
+        }
     }
 }
