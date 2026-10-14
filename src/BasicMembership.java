@@ -15,11 +15,8 @@ public class BasicMembership implements Membership{
 
     @Override
     public boolean canBookPT() {
-        return true;
+        return false;
     }
 
-    public GymBranch getHomeBranch() {
-        return homeBranch;
-    }
 
 }
