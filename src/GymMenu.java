@@ -1,4 +1,4 @@
-import java.util.Locale;
+
 import java.util.Scanner;
 
 public class GymMenu {
@@ -70,6 +70,10 @@ public class GymMenu {
         if(choice.equals("0")){
             return;
         }
+        if(!choice.equals("1") && !choice.equals("2") && !choice.equals("3")){
+            System.out.println("Invalid person type. Please choose 1, 2 or 3");
+            return;
+        }
 
         System.out.print("Enter name: ");
         String name=scan.nextLine();
@@ -119,6 +123,7 @@ public class GymMenu {
                         membership= new PremiumMembership(branch);
                     }else {
                         System.out.println("Invalid membership choice.");
+                        return;
                     }
 
                     //Create the selected person using the appropriate constructor

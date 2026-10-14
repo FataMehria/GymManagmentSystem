@@ -22,6 +22,9 @@ public Member(String name,
         super.printInfo();
         //shows membership type based on class
         System.out.println("Membership: "+membership.getClass().getSimpleName());
+        System.out.println("Can train at all branches: "+membership.canTrainAtAllBranches());
+        System.out.println("Can book PT at home branch: "+membership.canBookPTAt(getGymBranch()));
+
         System.out.println("===================");
     }
 

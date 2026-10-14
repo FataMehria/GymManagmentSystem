@@ -7,16 +7,18 @@ public class BasicMembership implements Membership{
         }
         this.homeBranch=homeBranch;
     }
-    @Override
-    public boolean canTrainAt(GymBranch gymBranch) {
-
-        return homeBranch.equals(gymBranch);
-    }
 
     @Override
-    public boolean canBookPT() {
+    public boolean canBookPTAt(GymBranch gymBranch) {
         return false;
     }
 
+    @Override
+    public boolean canTrainAtAllBranches() {
+        return false;
+    }
 
+    public GymBranch getHomeBranch() {
+        return homeBranch;
+    }
 }

@@ -1,4 +1,4 @@
 public interface Membership {
-    boolean canTrainAt(GymBranch gymBranch);
-    boolean canBookPT();
+    boolean canBookPTAt(GymBranch gymBranch);
+    boolean canTrainAtAllBranches();
 }
