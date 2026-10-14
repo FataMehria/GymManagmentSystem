@@ -4,10 +4,13 @@ import java.util.Scanner;
 public class GymMenu {
    private Scanner scan;
    private GymManager manager;
+   private Gym gym;
 
-   public GymMenu(GymManager manager){
+   //Receives the manager and gym from main
+   public GymMenu(GymManager manager,Gym gym){
        this.manager=manager;
        this.scan = new Scanner(System.in);
+       this.gym=gym;
    }
 
    public void start(){
@@ -15,24 +18,26 @@ public class GymMenu {
 
        while (running){
            System.out.println("\n====Gym Management System ====");
-           System.out.println("1. Show all people");
-           System.out.println("2. Search for a person");
-           System.out.println("3. Remove a person");
-           System.out.println("4. Show gym branches");
+           System.out.println("1. Add a person");
+           System.out.println("2. Show all people");
+           System.out.println("3. Search for a person");
+           System.out.println("4. Remove a person");
+           System.out.println("5. Show gym branches");
            System.out.println("0. Exit");
            System.out.print("Choose an option between 0-5: ");
            String choice = scan.nextLine();
            switch (choice){
-               case "1":
+
+               case "2":
                    manager.showAllPeople();
                    break;
-               case "2":
+               case "3":
                    searchPerson();
                    break;
-               case "3":
+               case "4":
                    removerPerson();
                    break;
-               case "4":
+               case "5":
                    System.out.println("Branch info will be here");
                    break;
                case "0":

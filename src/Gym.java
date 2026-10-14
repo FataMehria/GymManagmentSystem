@@ -29,4 +29,8 @@ public class Gym {
             System.out.println(branch.getAddress());
         }
     }
+    //Return branches that belong to this gym
+    public List<GymBranch> getBranches() {
+        return branches;
+    }
 }
