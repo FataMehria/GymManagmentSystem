@@ -29,6 +29,17 @@ public class Gym {
             System.out.println(branch.getAddress());
         }
     }
+    public GymBranch findBranchByAddress(String address){
+        if(address==null || address.isBlank()){
+            return null;
+        }
+        for(GymBranch branch:branches){
+            if(branch.getAddress().equalsIgnoreCase(address.trim())){
+                return branch;
+            }
+        }
+        return null;
+    }
     //Return branches that belong to this gym
     public List<GymBranch> getBranches() {
         return branches;

@@ -77,35 +77,34 @@ public class GymMenu {
 
         System.out.print("Enter name: ");
         String name=scan.nextLine();
-
-        //read the person information and validate the input
+        int age;
         try {
             System.out.print("Enter age: ");
-            int age= Integer.parseInt(scan.nextLine());
+            age= Integer.parseInt(scan.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Age must be a number.");
+            return;
+        }
 
-            System.out.print("Enter email: ");
-            String email=scan.nextLine();
 
-            System.out.print("Enter phone: ");
-            String phone=scan.nextLine();
+        System.out.print("Enter email: ");
+        String email=scan.nextLine();
 
-            System.out.println("Choose gym branch: ");
-            gym.showBranches();
-            System.out.print("Enter branch address: ");
-            String address=scan.nextLine();
+        System.out.print("Enter phone: ");
+        String phone=scan.nextLine();
 
-            GymBranch branch=null;
-            //find the branch selected by the user
-            for (GymBranch gymBranch: gym.getBranches()){
-                if(gymBranch.getAddress().equalsIgnoreCase(address.trim())){
-                    branch=gymBranch;
-                    break;
-                }
-            }
-            if (branch == null){
-                System.out.println("Branch not found.");
-                return;
-            }
+        System.out.println("Choose gym branch: ");
+        gym.showBranches();
+        System.out.print("Enter branch address: ");
+        String address=scan.nextLine();
+
+        GymBranch branch=gym.findBranchByAddress(address);
+        if (branch == null){
+            System.out.println("Branch not found.");
+            return;
+        }
+        //read the person information and validate the input
+        try {
             Person person=null;
             switch (choice){
                 case "1":
@@ -151,9 +150,7 @@ public class GymMenu {
             manager.addPerson(person);
             System.out.println("Person add successfully");
         }//handle invalid number input and invalid person information
-        catch (NumberFormatException e){
-            System.out.println("Age must be a number.");
-        } catch (IllegalArgumentException e){
+         catch (IllegalArgumentException e){
             System.out.println("Invalid information: "+e.getMessage());
         }
         System.out.println("Press enter to return to the menu.");
